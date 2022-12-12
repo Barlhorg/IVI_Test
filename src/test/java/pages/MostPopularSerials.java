@@ -9,8 +9,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class MostPopularMovie extends TestBase {
-    private static By favoriteButton = By.xpath("(//div[@class=\"nbl-button__primaryText\"])[11]");
+public class MostPopularSerials extends TestBase {
+    private static By favoriteButton = By.xpath("(//button[@class=\"nbl-button nbl-button_iconMode_withIcon nbl-button_style_dafu nbl-button_size_drahmin nbl-button_hasBadge_0 userButtons__nbl-button\"])[2]");
     private static By profile = By.xpath("//a[@class='headerAvatar__link']");
     private static By watchLater = By.xpath("//div[text()='Смотреть позже']");
     private static By movieTitle = By.tagName("h1");
@@ -27,6 +27,7 @@ public class MostPopularMovie extends TestBase {
         driver.findElement(favoriteButton).click();
         Thread.sleep(10000);
     }
+
     @Step("move a mouse courser to a profile icon")
     public static void moveToProfile() {
         Actions actions = new Actions(driver);
@@ -34,9 +35,10 @@ public class MostPopularMovie extends TestBase {
     }
 
     @Step("open a \"Смотреть позже\" list")
-    public static ProfilePage clickOnWatchLater() {
+    public static ProfilePage clickOnWatchLater() throws InterruptedException {
         wait.until(ExpectedConditions.presenceOfElementLocated(watchLater));
         driver.findElement(watchLater).click();
+        Thread.sleep(10000);
         return new ProfilePage();
     }
 }

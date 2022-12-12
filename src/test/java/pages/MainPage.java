@@ -18,4 +18,8 @@ public class MainPage extends TestBase {
         driver.findElement(By.xpath("//div[text()='Фильмы']")).click();
         return new FilmsPage();
     }
+    public static SerialPage clickOnSerials() {
+        driver.findElement(By.xpath("//div[text()='Сериалы']")).click();
+        return new SerialPage();
+    }
 }
