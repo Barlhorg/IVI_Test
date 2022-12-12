@@ -20,7 +20,6 @@ public class lastAddedMovieTest extends TestBase {
         BestMovies.clickOnMostPopularMovie();
         String title = MostPopularMovie.getName();
         MostPopularMovie.clickOnFavoriteButton();
-        //MostPopularMovie.clickOnCloseWindow();
         MostPopularMovie.moveToProfile();
         MostPopularMovie.clickOnWatchLater();
         System.out.println(ProfilePage.getTitle());
